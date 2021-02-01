@@ -1,0 +1,141 @@
+﻿@model Forms.Models.RegistrationForm
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container " style="margin-top:50px;">
+
+    <div class="row">
+        <div class="col-md-5 col-sm-12 " style="color:#fff; font-weight:bold; line-height:30px;">
+            <h1 style=" font-size: 40px;">Instant access to investing, anytime and anywhere with 10% intrest </h1>
+            <p style=" font-size: 20px;">Investing has never been easier. Everything you are looking for in an ultimate investment platform — on the device of your choice.</p>
+        </div>
+        <div class="col-md-7 col-sm-12 btn-d">
+            <img src="~/logo/btc8.jpg" style="height:300px; width:300px;" />
+        </div>
+    </div>
+    <div class="row" style="margin-top:10px;">
+        <div class="col-md-5">
+            @Html.ActionLink("Get started", "Create", "Home", new { @class = "btn btn-danger", @style = "width:200px;" })
+        </div>
+    </div>
+
+
+</div>
+
+<div class="container-fluid " style="background-color:#fff; text-align:justify; margin:5px; padding:40px;">
+    <h1 style="text-align:center; font-weight:bold;">
+        Why invest with C4 BTC BOT / INVESTMENT..?
+    </h1><br />
+    <div class="row" style="">
+        <div class="col-md-3">
+            <div class="">
+                <spanz class="glyphicon glyphicon-envelope" style="color:#fff; background-color:orangered;border-radius:50px;height:60px; width:60px;text-align:center;line-height:55px; font-size:20px;"></spanz>
+            </div>
+            <div>
+                <h2>Award-winning platform</h2>
+                <p>
+                    Award-winning software recognized and praised by the most respected experts of the industry.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="">
+                <spanz class="glyphicon glyphicon-tags" style="color:#fff; background-color:orangered;border-radius:50px;height:60px; width:60px;text-align:center;line-height:55px; font-size:20px;"></spanz>
+            </div>
+            <div>
+                <h2>
+                    Customizable interface
+                </h2>
+                <p>
+                    Customize the platform to make it fit better to your needs — from chart type to color theme.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="">
+                <spanz class="glyphicon glyphicon-usd" style="color:#fff; background-color:orangered;border-radius:50px;height:60px; width:60px;text-align:center;line-height:55px; font-size:20px;"></spanz>
+            </div>
+            <div>
+                <h2>Convenient withdrawals</h2>
+                <p>
+                    Withdraw your money in an instant using a wide range of available payment systems.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="">
+                <spanz class="glyphicon glyphicon-bell" style="color:#fff; background-color:orangered;border-radius:50px;height:60px; width:60px;text-align:center;line-height:55px; font-size:20px;"></spanz>
+            </div>
+            <div>
+                <h2>Support 24/7</h2>
+                <p>
+                    A team of professionals speaking your mother tongue are always here to support you.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="container-fluid " style="background-color:#ccc; text-align:justify; margin:5px; padding:40px; position:relative; top:-10px;">
+    <h1 style="text-align:center; font-weight:bold;">
+        It’s easy to get started
+    </h1><br />
+    <div class="row"  style="">
+        <div class="col-md-4">
+            <div class="">
+                <h1 style="color:#fff; background-color:forestgreen;border-radius:50px;height:60px; width:60px;text-align:center;line-height:55px; font-size:30px;">1</h1>
+            </div>
+            <div>
+                <h2>Sign up</h2>
+                <p>
+                    Create an account for free using your email address
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="">
+                <h1 style="color:#fff; background-color:forestgreen;border-radius:50px;height:60px; width:60px;text-align:center;line-height:55px; font-size:30px;">2</h1>
+            </div>
+            <div>
+                <h2>
+                    Explore the platform
+                </h2>
+                <p>
+                    See what it’s like to invest without putting your money at risk
+
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="">
+                <h1 style="color:#fff; background-color:forestgreen;border-radius:50px;height:60px; width:60px;text-align:center;line-height:55px; font-size:30px;">3</h1>
+            </div>
+            <div>
+                <h2>
+                    Invest & earn profit
+                </h2>
+                <p>
+                    Select an asset and make your money work for you
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid " style="background-color:#fff; text-align:center; margin:5px; padding:40px;">
+        <h1>
+            Ready to get free access to the world of investing?
+        </h1>
+        <p>
+            Create an account to start using the platform.
+        </p>
+        <div style="margin-top:10px;">
+            <div class="">
+                @Html.ActionLink("Get started", "Create", "Home", new { @class = "btn btn-danger", @style = "width:150px;" })
+            </div>
+        </div>
+    </div>
+</div>

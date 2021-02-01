@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Styles/formStyle.css" rel="stylesheet" />
+</head>
+<body style="background-image: url('/logo/btc7.jpg'); background-repeat:no-repeat;
+        background-size: cover; background-attachment:fixed;">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("C4 BTC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="pull-right nav navbar-nav">
+                    <li style="line-height:50px; color:#fff; margin-right:20px; " class="dropdown">
+                        @if (@Session["FirstName"] == null)
+                        {
+                            <span class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <span class="caret"></span>
+                            </span>
+
+                            <div class="dropdown-menu" style="padding:15px; background-color:#222222; color:#fff;">
+
+                                <div>@Html.ActionLink("Login", "Login", "Home", new { @style = "color:#fff;", @id = "drpdown-item" })</div>
+                                <div>@Html.ActionLink("Register", "Create", "Home", new { @style = "color:#fff;", @id = "drpdown-item" })</div>
+                                <div class="divider"></div>
+                                <a href="" id="drpdown-item">Settings</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <span>You are welcome to C4 BTC</span>
+                            <span class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-user"></span>
+                                @Session["FirstName"]
+                                <span class="caret"></span>
+                            </span>
+
+                            <div class="dropdown-menu" style="padding:15px; background-color:#222222; color:#fff;">
+
+                                <div>@Html.ActionLink("Login", "Login", "Home", new { @style = "color:#fff;", @class = "drpdown-item" })</div>
+                                <div>@Html.ActionLink("Register", "Create", "Home", new { @style = "color:#fff;", @class = "drpdown-item" })</div>
+                                <div class="divider"></div>
+                                <a href="" class="drpdown-item">Settings</a>
+                                <div>@Html.ActionLink("Logout", "Logout", "Home", new { @style = "color:#fff;", @class = "drpdown-item" })</div>
+                            </div>
+                        }
+                    </li>
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "About")</li>
+                    <li>@Html.ActionLink("Dashboard", "Dashboard", "Home", new { })</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p class="" style="font-style:italic; color:#ccc; text-align:center">&copy; @DateTime.Now.Year - My C4 BTC BOT / INVESTMENT</p>
+        </footer>
+    </div>
+
+    <script>
+        function myFunction() {
+            var copyText = document.getElementById("myInput");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999)
+            document.execCommand("copy");
+            alert("Copied: " + copyText.value);
+        }
+    </script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+</body>
+</html>

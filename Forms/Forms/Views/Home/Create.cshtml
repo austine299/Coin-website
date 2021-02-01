@@ -1,0 +1,138 @@
+﻿@model Forms.Models.RegistrationForm
+
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<div class="container" style=" padding-left:4em;width:78%;">
+
+    <h2 style="text-align:center;">Register for C4 BTC BOT / INVESTMENT Here</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <div style="text-align:center;">
+                <span class="glyphicon glyphicon-registration-mark" style="font-size:60px;"></span>
+            </div>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control ", @autofocus = "true" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OtherName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.OtherName, new { htmlAttributes = new { @class = "form-control " } })
+                @Html.ValidationMessageFor(model => model.OtherName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.InvestorEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.InvestorEmail, new { htmlAttributes = new { @class = "form-control " } })
+                @Html.ValidationMessageFor(model => model.InvestorEmail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control " } })
+                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control " } })
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            @Html.LabelFor(model => model.YearOfExperience, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.YearOfExperience, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.YearOfExperience, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ComfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.ComfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ComfirmPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>
+            <h4>Payment Form</h4>
+            <hr />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-md-2">
+                    Pay through BTC:
+                </label>
+                <div class="col-md-10">
+                    <input type="text" value="Hello World" id="myInput" class="form-control col-md-11">
+                    <button onclick="myFunction()" class="col-md-1 btn btn-default">Copy</button>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Upload_Screenshort, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="file" name="file" id="file" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.Upload_Screenshort, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+                <div class="row">
+                    <div class="col-md-5">
+
+                    </div>
+                    <div class="col-md-7">
+                        <input type="submit" value="Register" class="btn btn-success col-md-2" />
+                    </div>
+
+                </div>
+            </div>
+
+            <Span >If already have an account <b style="font-size:15px;">@Html.ActionLink("Login", "Login", "Home")</b></Span>
+        </div>
+    }
+
+    @*@if (ViewBag.Message != null)
+    {
+        <script>
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+        </script>
+    }*@
+
+</div>
+

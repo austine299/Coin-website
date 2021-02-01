@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    if (@Session["ID"] == null)
+    {
+        Session.Abandon();
+    }
+    else
+    {
+
+    }
+}
+
+<div class="container" style="background-color:#ccc; height:500px;">
+    <div class="row" style="margin-top:40px;">
+        <div class="col-md-4" style="padding:10px;">
+            <div style=" background-color: #fff; height: 60px;line-height:75px; border-radius:5px; font-weight:bold;padding:5px;">
+                <span class="glyphicon glyphicon-usd" style="background-color:orange; border-radius:100%;
+                    padding-top:14px;margin-left:5px; height:50px; width:50px;text-align:center; color:#fff; font-size:25px;"></span>
+                <small style="">AMOUNT INVESTED</small>
+                <div class="pull-right" style="font-size:20px;margin-right:5px;">
+                    @if (@Session["Amount"] == null)
+                    {
+
+                        <span>&#36;0.00</span>
+                    }
+                    else
+                    {
+                        <span> &#36;@Session["Amount"]</span>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="padding:10px;">
+            <div style=" background-color: #fff; height: 60px;line-height:75px; border-radius:5px; font-weight:bold;">
+                <span class="glyphicon glyphicon-plus-sign" style="background-color:lightblue; border-radius:100%;
+                    padding-top:14px;margin-left:5px; height:50px; width:50px;text-align:center; color:#fff; font-size:25px;"></span>
+                <small style="">INTEREST</small>
+                <div class="pull-right" style="font-size:20px;margin-right:5px;">
+                    @if (@Session["Interest"] == null)
+                    {
+                        <span>&#36;0.00</span>
+                    }
+                    else
+                    {
+                        <span> &#36;@Session["Interest"]</span>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="padding:10px;">
+            <div style=" background-color: #fff; height: 60px;line-height:75px; border-radius:5px; font-weight:bold;">
+                <span class="glyphicon glyphicon-check" style="background-color:lightgreen; border-radius:100%;
+                    padding-top:14px;margin-left:5px; height:50px; width:50px;text-align:center; color:#fff; font-size:25px;"></span>
+                <small style="">TOTAL AMOUNT / INTEREST</small>
+                <div class="pull-right" style="font-size:20px;margin-right:5px;">
+                    @if (@Session["Interest"] == null)
+                    {
+                        <span>&#36;0.00</span>
+                    }
+                    else
+                    {
+                        <span>&#36;@Session["Total"]</span>
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div style="text-align:center;">
+        @if (Session["Amount"] != null)
+        {
+            <input type="submit" value="Withdraw" class="btn btn-danger" style="width:260px; font-weight:bold;font-size:15px;" onclick="return confirm('Please kindly wait for 30 day before withdrawer')" />
+        }
+        else
+        {
+            <input type="submit" value="Withdraw" class="btn btn-danger" style="width:260px;font-weight:bold;font-size:15px;" onclick="return confirm('Please make payment to be able to withdraw')" />
+        }
+
+    </div>
+    <div>
+        @Html.ActionLink("Make a payment", "UpdatePayment", new { id = Session["ID"] })
+    </div>
+</div>
+

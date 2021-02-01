@@ -1,0 +1,49 @@
+﻿@model Forms.Models.RegistrationForm
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<div class="container" style=" padding-left:4em;width:78%;">
+
+    @using (Html.BeginForm("LoginAutherize", "Home", FormMethod.Post))
+    {
+        <div class="form-horizontal">
+            <div style="text-align:center;">
+                <span class="glyphicon glyphicon-user" style="font-size:60px;"></span>
+            </div>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <b class="col-md-2">
+                    Investor Email:
+                </b>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.InvestorEmail, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.InvestorEmail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <b class="col-md-2">
+                    Password:
+                </b>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div>
+                <label class="field-validation-error" style="color:red;"> @Html.DisplayFor(model => model.LoginErrorMessage)</label>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-12">
+                    <input type="reset" value="Clear" class="btn btn-default col-md-1" />
+                    <input type="submit" value="Login" class="btn btn-primary col-md-1" style="margin-left:95px;" />
+                </div>
+            </div>
+
+            <Span >If you don't have an account <b style="font-size:15px;">@Html.ActionLink("Register Here", "Create", "Home")</b></Span>
+        </div>
+    }
+</div>
+
+

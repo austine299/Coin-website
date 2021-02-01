@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UserFormModel1StoreContainer" CdmEntityContainer="UserFormEntities5">
+    <EntitySetMapping Name="paymentFrms">
+      <EntityTypeMapping TypeName="UserFormModel1.paymentFrm">
+        <MappingFragment StoreEntitySet="paymentFrm">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UploadScreenshort" ColumnName="UploadScreenshort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
